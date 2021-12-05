@@ -50,13 +50,6 @@
       "Occupation": "Artist"
     },
     {
-      "id": 8,
-      "firstName": "Gaye Su",
-      "lastName": "Akyol",
-      "phone": "544-44-0444505",
-      "Occupation": "Artist"
-    },
-    {
       "id": 9,
       "firstName": "Sunnie",
       "lastName": "Baudelarie",
@@ -76,6 +69,34 @@
       "lastName": "Baudelarie",
       "phone": "2222-44-0444505",
       "Occupation": "Dedective"
+    },
+    {
+      "firstName": "Duygu",
+      "lastName": "Ozdemir",
+      "Occupation": "is not Agent",
+      "phone": "222-44-044405",
+      "id": 100
+    },
+    {
+      "firstName": "Jeff",
+      "lastName": "Bezos",
+      "Occupation": "overRich",
+      "phone": "999-11-11t1",
+      "id": 101
+    },
+    {
+      "firstName": "Jeff",
+      "lastName": "Bezos",
+      "Occupation": "overRich",
+      "phone": "111-11-111",
+      "id": 102
+    },
+    {
+      "firstName": "Elon",
+      "lastName": "Musk",
+      "Occupation": "Alien hunter",
+      "phone": "666-66-6666",
+      "id": 103
     }
   ]
 }
