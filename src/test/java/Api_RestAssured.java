@@ -1,12 +1,14 @@
 import org.junit.jupiter.api.Test;
 import io.restassured.http.ContentType;
 import org.json.JSONObject;
-
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.lessThan;
 
+
+
 public class Api_RestAssured {
+
 
     @Test
     public void getRequest_Registered_Member(){
@@ -20,15 +22,27 @@ public class Api_RestAssured {
                 .time(lessThan(5000L));
     }
     @Test
+    public void getRequest_Spesific_Registered_Member() {
+
+        baseURI = "http://localhost:3000";
+
+            given().queryParam("lastName", "Baudelarie")
+                .queryParam("firstName", "Violet")
+                .get("/Registered_Member")
+                .then()
+                .statusCode(200)
+                .time(lessThan(2000L));
+    }
+    @Test
     public void postRequest_Registered_Member(){
 
         baseURI="http://localhost:3000";
 
         JSONObject request = new JSONObject();
-        request.put("firstName", "Jeff");
-        request.put("lastName","Bezos");
-        request.put("phone","111-11-111");
-        request.put("Occupation","overRich");
+        request.put("firstName", "Elon");
+        request.put("lastName","Musk");
+        request.put("phone","666-66-6666");
+        request.put("Occupation","Alien hunter");
         System.out.println(request);
         System.out.println(request.toString());
 
@@ -45,8 +59,8 @@ public class Api_RestAssured {
     @Test
     public void updateRequest_Registered_Member(){
         baseURI="http://localhost:3000";
-        JSONObject request = new JSONObject();
 
+        JSONObject request = new JSONObject();
         request.put("firstName", "Duygu");
         request.put("lastName","Ozdemir");
         request.put("phone","222-44-044405");
@@ -60,7 +74,7 @@ public class Api_RestAssured {
                 .contentType(ContentType.JSON)
                 .body(request.toString())
                 .when()
-                .put("/Registered_Member")
+                .put("/Registered_Member/100")
                 .then()
                 .statusCode(200);
                 // .log.all();
